@@ -3,4 +3,3 @@
 
 ## Brain-even game example:
 [![asciicast](https://asciinema.org/a/94aUkgXVAnE3vmJCKKIF3y88E.svg)](https://asciinema.org/a/94aUkgXVAnE3vmJCKKIF3y88E)
-<script id="asciicast-94aUkgXVAnE3vmJCKKIF3y88E" src="https://asciinema.org/a/94aUkgXVAnE3vmJCKKIF3y88E.js" async></script>
