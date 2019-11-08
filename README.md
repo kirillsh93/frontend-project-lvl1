@@ -1,4 +1,5 @@
 # frontend-project-lvl1
 <a href="https://codeclimate.com/github/kirillsh93/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/6f478d4d34603c769317/maintainability" /></a> <a href="https://codeclimate.com/github/kirillsh93/frontend-project-lvl1/test_coverage"><img src="https://api.codeclimate.com/v1/badges/6f478d4d34603c769317/test_coverage" /></a> [![Build Status](https://travis-ci.com/kirillsh93/frontend-project-lvl1.svg?branch=master)](https://travis-ci.com/kirillsh93/frontend-project-lvl1)
 
+## Brain-even game example:
 [![asciicast](https://asciinema.org/a/94aUkgXVAnE3vmJCKKIF3y88E.svg)](https://asciinema.org/a/94aUkgXVAnE3vmJCKKIF3y88E)
