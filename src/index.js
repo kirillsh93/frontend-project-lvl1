@@ -5,15 +5,27 @@ const getName = () => readlineSync.question('May I have your name? ');
 
 const greet = (name) => console.log(`Hello, ${name}!\n`);
 
-const randomNumber = () => Math.round(Math.random() * 100);
+const randomNumber = (range) => Math.floor(Math.random() * range);
 
 const randomProcedure = () => {
-  const randomNum = Math.floor(Math.random() * 3) + 1;
   const str = '*-+';
-  return str[randomNum - 1];
+
+  return str[randomNumber(3)];
 };
 
-const randomPair = () => cons(cons(randomNumber(), randomNumber()), randomProcedure());
+const procedure = (num1, num2, proc) => {
+  switch (proc) {
+    case '*':
+      return num1 * num2;
+    case '-':
+      return num1 - num2;
+    default:
+      return num1 + num2;
+  }
+};
+
+// eslint-disable-next-line max-len
+const randomPair = () => cons(cons(randomNumber(100), randomNumber(100)), cons(randomProcedure(), randomNumber(10)));
 
 const askAnswer = () => readlineSync.question('Your answer: ');
 
@@ -32,5 +44,5 @@ const playGame = (count, name, q, a, p) => {
 };
 
 export {
-  playGame, randomPair, getName, greet,
+  playGame, randomPair, getName, greet, procedure, randomNumber,
 };

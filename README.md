@@ -9,3 +9,6 @@
 
 ## Greater common divisor:
 [![asciicast](https://asciinema.org/a/CTcgJKbTiTl4DW8ovkfVDpToB.svg)](https://asciinema.org/a/CTcgJKbTiTl4DW8ovkfVDpToB)
+
+## Progression:
+[![asciicast](https://asciinema.org/a/Qjrnxxd4ka29eSKxyfrCeN7GM.svg)](https://asciinema.org/a/Qjrnxxd4ka29eSKxyfrCeN7GM)
