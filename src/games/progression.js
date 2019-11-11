@@ -1,8 +1,7 @@
 import { car, cdr } from '@hexlet/pairs';
 
 const progression = (start, step, size, hidden) => {
-  let num = start;
-  let result = `${num}`;
+  let result = `${start}`;
 
   if (hidden === 0) {
     result = '..';
@@ -10,13 +9,12 @@ const progression = (start, step, size, hidden) => {
 
   for (let i = 1; i <= size; i += 1) {
     if (i === hidden) {
-      num += step;
       result += ' ..';
     } else {
-      num += step;
-      result = `${result} ${num}`;
+      result = `${result} ${i * step + start}`;
     }
   }
+
   return result;
 };
 
