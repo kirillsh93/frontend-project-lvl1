@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
-import greet from '..';
+import { getName, greet } from '../index';
 
 console.log('Welcome to the Brain Games!\n');
 
-greet();
+const name = getName();
+
+greet(name);

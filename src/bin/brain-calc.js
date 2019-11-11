@@ -3,9 +3,9 @@
 import {
   playGame, randomPair, getName, greet,
 } from '../index';
-import { question, rightAnswer } from '../games/even';
+import { question, rightAnswer } from '../games/calc';
 
-console.log('Welcome to the Brain Games!\nAnswer "yes" if the number is even, otherwise answer "no".\n');
+console.log('Welcome to the Brain Games!\nWhat is the result of the expression?\n');
 
 const name = getName();
 
