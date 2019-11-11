@@ -16,6 +16,9 @@ const question = (p) => {
 const rightAnswer = (p) => {
   const number = car(car(p));
   const half = Math.round(number / 2);
+  if (number < 2) {
+    return 'no';
+  }
   return isPrime(number, half) ? 'yes' : 'no';
 };
 
