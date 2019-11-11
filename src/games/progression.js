@@ -20,12 +20,6 @@ const progression = (start, step, size, hidden) => {
   return result;
 };
 
-const hiddenNumber = (start, step, count, hidden) => {
-  const next = start + step;
-
-  return count === hidden ? start : hiddenNumber(next, step, count + 1, hidden);
-};
-
 const question = (p) => {
   const start = car(car(p));
   const step = cdr(car(p));
@@ -37,9 +31,9 @@ const question = (p) => {
 const rightAnswer = (p) => {
   const start = car(car(p));
   const step = cdr(car(p));
-  const toHide = cdr(cdr(p));
+  const n = cdr(cdr(p));
 
-  return `${hiddenNumber(start, step, 0, toHide)}`;
+  return `${n * step + start}`;
 };
 
 export { question, rightAnswer };
