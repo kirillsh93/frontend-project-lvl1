@@ -13,17 +13,6 @@ const randomProcedure = () => {
   return str[randomNumber(3)];
 };
 
-const procedure = (num1, num2, proc) => {
-  switch (proc) {
-    case '*':
-      return num1 * num2;
-    case '-':
-      return num1 - num2;
-    default:
-      return num1 + num2;
-  }
-};
-
 // eslint-disable-next-line max-len
 const randomPair = () => cons(cons(randomNumber(100), randomNumber(100)), cons(randomProcedure(), randomNumber(10)));
 
@@ -44,5 +33,5 @@ const playGame = (count, name, q, a, p) => {
 };
 
 export {
-  playGame, randomPair, getName, greet, procedure, randomNumber,
+  playGame, randomPair, getName, greet,
 };

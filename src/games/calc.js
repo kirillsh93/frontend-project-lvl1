@@ -1,5 +1,15 @@
 import { car, cdr } from '@hexlet/pairs';
-import { procedure } from '../index';
+
+const procedure = (num1, num2, proc) => {
+  switch (proc) {
+    case '*':
+      return num1 * num2;
+    case '-':
+      return num1 - num2;
+    default:
+      return num1 + num2;
+  }
+};
 
 const question = (p) => {
   const num1 = car(car(p));
