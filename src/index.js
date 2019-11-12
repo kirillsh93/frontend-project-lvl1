@@ -24,7 +24,6 @@ const procedure = (num1, num2, proc) => {
   }
 };
 
-// eslint-disable-next-line max-len
 const randomPair = () => cons(cons(randomNumber(100), randomNumber(100)), cons(randomProcedure(), randomNumber(10)));
 
 const askAnswer = () => readlineSync.question('Your answer: ');
