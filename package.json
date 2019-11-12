@@ -1,7 +1,7 @@
 {
   "name": "fplvl1-ks",
   "version": "1.0.8",
-  "description": "",
+  "description": "Pack of games, containing 5 console games: isEven, Calculator, Greater Common Divisor, Progression and isPrime",
   "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
@@ -23,7 +23,15 @@
     "type": "git",
     "url": "git+https://github.com/kirillsh93/frontend-project-lvl1.git"
   },
-  "keywords": [],
+  "keywords": [
+    "games",
+    "console games",
+    "brain games",
+    "iseven",
+    "calculator",
+    "greater common divisor",
+    "progression"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
