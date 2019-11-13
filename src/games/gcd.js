@@ -1,4 +1,5 @@
 import { car, cdr } from '@hexlet/pairs';
+import playGame from '../index';
 
 const gcd = (num1, num2) => {
   const d = num1 % num2;
@@ -22,4 +23,9 @@ const rightAnswer = (p) => {
   return `${gcd(b, s)}`;
 };
 
-export { question, rightAnswer };
+const startGcd = () => {
+  console.log('Welcome to the Brain Games!\nFind the greatest common divisor of given numbers.\n');
+  return playGame(question, rightAnswer);
+};
+
+export default startGcd;

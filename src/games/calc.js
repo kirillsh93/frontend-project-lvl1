@@ -1,4 +1,5 @@
 import { car, cdr } from '@hexlet/pairs';
+import playGame from '../index';
 
 const procedure = (num1, num2, proc) => {
   switch (proc) {
@@ -27,4 +28,9 @@ const rightAnswer = (p) => {
   return `${procedure(num1, num2, proc)}`;
 };
 
-export { question, rightAnswer };
+const startCalc = () => {
+  console.log('Welcome to the Brain Games!\nWhat is the result of the expression?\n');
+  return playGame(question, rightAnswer);
+};
+
+export default startCalc;

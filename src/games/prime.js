@@ -1,10 +1,11 @@
 import { car } from '@hexlet/pairs';
+import playGame from '../index';
 
-const isPrime = (num, h) => {
-  if (h === 1) {
+const isPrime = (num, div) => {
+  if (div === 1) {
     return true;
   }
-  return num % h === 0 ? false : isPrime(num, h - 1);
+  return num % div === 0 ? false : isPrime(num, div - 1);
 };
 
 const question = (p) => {
@@ -22,4 +23,9 @@ const rightAnswer = (p) => {
   return isPrime(number, half) ? 'yes' : 'no';
 };
 
-export { question, rightAnswer };
+const startPrime = () => {
+  console.log('Welcome to the Brain Games!\nAnswer "yes" if given number is prime. Otherwise answer "no".\n');
+  return playGame(question, rightAnswer);
+};
+
+export default startPrime;
