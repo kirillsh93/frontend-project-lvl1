@@ -1,7 +1,7 @@
 import { car, cdr } from '@hexlet/pairs';
 import playGame from '../index';
 
-const procedure = (num1, num2, proc) => {
+const calculate = (num1, num2, proc) => {
   switch (proc) {
     case '*':
       return num1 * num2;
@@ -25,7 +25,7 @@ const rightAnswer = (p) => {
   const num2 = cdr(car(p));
   const proc = car(cdr(p));
 
-  return `${procedure(num1, num2, proc)}`;
+  return `${calculate(num1, num2, proc)}`;
 };
 
 const startCalc = () => {
