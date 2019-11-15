@@ -14,8 +14,11 @@ const randomProcedure = () => {
   return str[randomNumber(3)];
 };
 
-// eslint-disable-next-line max-len
-const gamesData = () => cons(cons(randomNumber(50), randomNumber(50)), cons(randomProcedure(), randomNumber(10)));
+const gamesData = () => {
+  const pair1 = cons(randomNumber(50), randomNumber(50));
+  const pair2 = cons(randomProcedure(), randomNumber(10));
+  return cons(pair1, pair2);
+};
 
 const playGame = (q, a) => {
   const name = getName();
