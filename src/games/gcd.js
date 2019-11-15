@@ -17,10 +17,10 @@ const question = (p) => {
 const rightAnswer = (p) => {
   const num1 = car(car(p));
   const num2 = cdr(car(p));
-  const b = num1 > num2 ? num1 : num2;
-  const s = b === num1 ? num2 : num1;
+  const bigger = num1 > num2 ? num1 : num2;
+  const smaller = bigger === num1 ? num2 : num1;
 
-  return `${gcd(b, s)}`;
+  return `${gcd(bigger, smaller)}`;
 };
 
 const startGcd = () => {

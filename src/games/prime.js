@@ -10,7 +10,6 @@ const isPrime = (num, div) => {
 
 const question = (p) => {
   const number = car(car(p));
-
   return number;
 };
 
