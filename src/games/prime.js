@@ -1,30 +1,27 @@
-import { car } from '@hexlet/pairs';
-import playGame from '../index';
+import { cons } from '@hexlet/pairs';
+import { playGame, randomNumber } from '../index';
+
+const welcomeText = 'Welcome to the Brain Games!\nAnswer "yes" if given number is prime. Otherwise answer "no".\n';
 
 const isPrime = (num, div) => {
-  if (div === 1) {
-    return true;
-  }
-  return num % div === 0 ? false : isPrime(num, div - 1);
-};
-
-const question = (p) => {
-  const number = car(car(p));
-  return number;
-};
-
-const rightAnswer = (p) => {
-  const number = car(car(p));
-  const half = Math.round(number / 2);
-  if (number < 2) {
+  if (num < 2) {
     return 'no';
   }
-  return isPrime(number, half) ? 'yes' : 'no';
+
+  if (div === 1) {
+    return 'yes';
+  }
+
+  return num % div === 0 ? 'no' : isPrime(num, div - 1);
 };
 
-const startPrime = () => {
-  console.log('Welcome to the Brain Games!\nAnswer "yes" if given number is prime. Otherwise answer "no".\n');
-  return playGame(question, rightAnswer);
+const qna = () => {
+  const num = randomNumber(100);
+  const half = Math.round(num / 2);
+
+  return cons(num, isPrime(num, half));
 };
+
+const startPrime = () => playGame(qna, welcomeText);
 
 export default startPrime;

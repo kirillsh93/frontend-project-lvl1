@@ -1,41 +1,26 @@
 import readlineSync from 'readline-sync';
-import { cons } from '@hexlet/pairs';
-
-const getName = () => readlineSync.question('May I have your name? ');
-
-const greet = (name) => console.log(`Hello, ${name}!\n`);
-
-const askAnswer = () => readlineSync.question('Your answer: ');
+import { car, cdr } from '@hexlet/pairs';
 
 const randomNumber = (range) => Math.floor(Math.random() * range);
 
-const randomProcedure = () => {
-  const str = '*-+';
-  return str[randomNumber(3)];
-};
+const playGame = (qna, text) => {
+  console.log(`${text}`);
 
-const gamesData = () => {
-  const pair1 = cons(randomNumber(50), randomNumber(50));
-  const pair2 = cons(randomProcedure(), randomNumber(10));
-  return cons(pair1, pair2);
-};
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!\n`);
 
-const playGame = (q, a) => {
-  const name = getName();
-  greet(name);
-
-  let data = gamesData();
+  let data = qna();
   let rounds = 3;
 
   while (rounds > 0) {
-    console.log(`Question: ${q(data)}`);
-    const playerAnswer = askAnswer();
+    console.log(`Question: ${car(data)}`);
+    const playerAnswer = readlineSync.question('Your answer: ');
 
-    if (playerAnswer !== a(data)) {
-      return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${a(data)}'.\nLet's try again, ${name}!`);
+    if (playerAnswer !== cdr(data)) {
+      return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${cdr(data)}'.\nLet's try again, ${name}!`);
     }
 
-    data = gamesData();
+    data = qna();
     rounds -= 1;
     console.log('Correct!');
   }
@@ -43,4 +28,4 @@ const playGame = (q, a) => {
   return console.log(`Congratulations, ${name}!`);
 };
 
-export default playGame;
+export { playGame, randomNumber };

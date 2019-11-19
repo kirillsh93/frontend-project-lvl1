@@ -1,5 +1,7 @@
-import { car, cdr } from '@hexlet/pairs';
-import playGame from '../index';
+import { cons } from '@hexlet/pairs';
+import { playGame, randomNumber } from '../index';
+
+const welcomeText = 'Welcome to the Brain Games!\nWhat number is missing in the progression?\n';
 
 const progression = (start, step, size, hidden) => {
   let result = `${start}`;
@@ -19,25 +21,14 @@ const progression = (start, step, size, hidden) => {
   return result;
 };
 
-const question = (p) => {
-  const start = car(car(p));
-  const step = cdr(car(p));
-  const toHide = cdr(cdr(p));
+const qna = () => {
+  const num = randomNumber(50);
+  const step = randomNumber(20);
+  const hidden = randomNumber(10);
 
-  return progression(start, step, 9, toHide);
+  return cons(`${progression(num, step, 9, hidden)}`, `${hidden * step + num}`);
 };
 
-const rightAnswer = (p) => {
-  const start = car(car(p));
-  const step = cdr(car(p));
-  const n = cdr(cdr(p));
-
-  return `${n * step + start}`;
-};
-
-const startProgression = () => {
-  console.log('Welcome to the Brain Games!\nWhat number is missing in the progression?\n');
-  return playGame(question, rightAnswer);
-};
+const startProgression = () => playGame(qna, welcomeText);
 
 export default startProgression;
