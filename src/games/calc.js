@@ -1,7 +1,11 @@
 import { cons } from '@hexlet/pairs';
 import { playGame, randomNumber } from '../index';
 
-const welcomeText = 'Welcome to the Brain Games!\nWhat is the result of the expression?\n';
+const welcomeText = 'What is the result of the expression?';
+
+const symbols = '*-+';
+
+const randomSymbol = (str) => str[randomNumber(str.length)];
 
 const calculate = (num1, num2, proc) => {
   switch (proc) {
@@ -14,17 +18,15 @@ const calculate = (num1, num2, proc) => {
   }
 };
 
-const randomProcedure = () => {
-  const str = '*-+';
-  return str[randomNumber(3)];
-};
-
 const qna = () => {
   const num1 = randomNumber(50);
   const num2 = randomNumber(50);
-  const proc = randomProcedure();
+  const proc = randomSymbol(symbols);
 
-  return cons(`${num1} ${proc} ${num2}`, `${calculate(num1, num2, proc)}`);
+  const q = `${num1} ${proc} ${num2}`;
+  const a = `${calculate(num1, num2, proc)}`;
+
+  return cons(q, a);
 };
 
 const startCalc = () => playGame(qna, welcomeText);

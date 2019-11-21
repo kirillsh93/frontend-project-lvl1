@@ -1,7 +1,7 @@
 import { cons } from '@hexlet/pairs';
 import { playGame, randomNumber } from '../index';
 
-const welcomeText = 'Welcome to the Brain Games!\nWhat number is missing in the progression?\n';
+const welcomeText = 'What number is missing in the progression?';
 
 const progression = (start, step, size, hidden) => {
   let result = `${start}`;
@@ -12,7 +12,7 @@ const progression = (start, step, size, hidden) => {
 
   for (let i = 1; i <= size; i += 1) {
     if (i === hidden) {
-      result += ' ..';
+      result = `${result} ..`;
     } else {
       result = `${result} ${i * step + start}`;
     }
@@ -23,10 +23,13 @@ const progression = (start, step, size, hidden) => {
 
 const qna = () => {
   const num = randomNumber(50);
-  const step = randomNumber(20);
+  const step = randomNumber(20) + 1;
   const hidden = randomNumber(10);
 
-  return cons(`${progression(num, step, 9, hidden)}`, `${hidden * step + num}`);
+  const q = `${progression(num, step, 9, hidden)}`;
+  const a = `${hidden * step + num}`;
+
+  return cons(q, a);
 };
 
 const startProgression = () => playGame(qna, welcomeText);

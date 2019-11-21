@@ -1,25 +1,27 @@
 import { cons } from '@hexlet/pairs';
 import { playGame, randomNumber } from '../index';
 
-const welcomeText = 'Welcome to the Brain Games!\nAnswer "yes" if given number is prime. Otherwise answer "no".\n';
+const welcomeText = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const isPrime = (num, div) => {
+const isPrime = (num) => {
   if (num < 2) {
-    return 'no';
+    return false;
   }
 
-  if (div === 1) {
-    return 'yes';
+  for (let d = 2; d * d <= num; d += 1) {
+    if (num % d === 0) {
+      return false;
+    }
   }
 
-  return num % div === 0 ? 'no' : isPrime(num, div - 1);
+  return true;
 };
 
 const qna = () => {
-  const num = randomNumber(100);
-  const half = Math.round(num / 2);
+  const q = randomNumber(100);
+  const a = isPrime(q) ? 'yes' : 'no';
 
-  return cons(num, isPrime(num, half));
+  return cons(q, a);
 };
 
 const startPrime = () => playGame(qna, welcomeText);

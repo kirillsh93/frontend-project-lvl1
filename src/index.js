@@ -4,7 +4,7 @@ import { car, cdr } from '@hexlet/pairs';
 const randomNumber = (range) => Math.floor(Math.random() * range);
 
 const playGame = (qna, text) => {
-  console.log(`${text}`);
+  console.log(`Welcome to the Brain Games!\n${text}\n`);
 
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!\n`);
@@ -17,7 +17,8 @@ const playGame = (qna, text) => {
     const playerAnswer = readlineSync.question('Your answer: ');
 
     if (playerAnswer !== cdr(data)) {
-      return console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${cdr(data)}'.\nLet's try again, ${name}!`);
+      console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${cdr(data)}'.\nLet's try again, ${name}!`);
+      return;
     }
 
     data = qna();
@@ -25,7 +26,7 @@ const playGame = (qna, text) => {
     console.log('Correct!');
   }
 
-  return console.log(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${name}!`);
 };
 
 export { playGame, randomNumber };
