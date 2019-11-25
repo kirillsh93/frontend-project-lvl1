@@ -5,13 +5,14 @@ import playGame from '..';
 const welcomeText = 'What number is missing in the progression?';
 
 const getProgression = (first, step, size, hidden) => {
-  let result = '';
+  let result;
 
   for (let i = 0; i < size; i += 1) {
+    const next = i * step + first;
     if (hidden === i) {
       result = i === 0 ? '..' : `${result} ..`;
     } else {
-      result = `${result} ${i * step + first}`;
+      result = i === 0 ? `${next}` : `${result} ${next}`;
     }
   }
 
@@ -23,7 +24,7 @@ const generateQna = () => {
   const step = randomNumber(1, 30);
   const hidden = randomNumber(0, 9);
 
-  const question = getProgression(first, step, 10, hidden);
+  const question = getProgression(first, step, 10, 0);
   const answer = String(hidden * step + first);
 
   return cons(question, answer);
