@@ -24,7 +24,7 @@ const generateQna = () => {
   const step = randomNumber(1, 30);
   const hidden = randomNumber(0, 9);
 
-  const question = getProgression(first, step, 10, 0);
+  const question = getProgression(first, step, 10, hidden);
   const answer = String(hidden * step + first);
 
   return cons(question, answer);
