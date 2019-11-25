@@ -21,7 +21,6 @@ const isPrime = (num) => {
 const generateQna = () => {
   const question = randomNumber(0, 100);
   const answer = isPrime(question) ? 'yes' : 'no';
-
   return cons(question, answer);
 };
 
