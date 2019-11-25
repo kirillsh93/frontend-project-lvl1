@@ -1,5 +1,6 @@
 import { cons } from '@hexlet/pairs';
-import { playGame, randomNumber } from '../index';
+import randomNumber from '../utils';
+import playGame from '..';
 
 const welcomeText = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -8,8 +9,8 @@ const isPrime = (num) => {
     return false;
   }
 
-  for (let d = 2; d * d <= num; d += 1) {
-    if (num % d === 0) {
+  for (let div = 2; div <= Math.sqrt(num); div += 1) {
+    if (num % div === 0) {
       return false;
     }
   }
@@ -17,13 +18,13 @@ const isPrime = (num) => {
   return true;
 };
 
-const qna = () => {
-  const q = randomNumber(100);
-  const a = isPrime(q) ? 'yes' : 'no';
+const generateQna = () => {
+  const question = randomNumber(0, 100);
+  const answer = isPrime(question) ? 'yes' : 'no';
 
-  return cons(q, a);
+  return cons(question, answer);
 };
 
-const startPrime = () => playGame(qna, welcomeText);
+const startPrime = () => playGame(generateQna, welcomeText);
 
 export default startPrime;

@@ -1,37 +1,34 @@
 import { cons } from '@hexlet/pairs';
-import { playGame, randomNumber } from '../index';
+import randomNumber from '../utils';
+import playGame from '..';
 
 const welcomeText = 'What number is missing in the progression?';
 
-const progression = (start, step, size, hidden) => {
-  let result = `${start}`;
+const getProgression = (first, step, size, hidden) => {
+  let result = '';
 
-  if (hidden === 0) {
-    result = '..';
-  }
-
-  for (let i = 1; i <= size; i += 1) {
-    if (i === hidden) {
-      result = `${result} ..`;
+  for (let i = 0; i < size; i += 1) {
+    if (hidden === i) {
+      result = i === 0 ? '..' : `${result} ..`;
     } else {
-      result = `${result} ${i * step + start}`;
+      result = `${result} ${i * step + first}`;
     }
   }
 
   return result;
 };
 
-const qna = () => {
-  const num = randomNumber(50);
-  const step = randomNumber(20) + 1;
-  const hidden = randomNumber(10);
+const generateQna = () => {
+  const first = randomNumber(0, 100);
+  const step = randomNumber(1, 30);
+  const hidden = randomNumber(0, 9);
 
-  const q = `${progression(num, step, 9, hidden)}`;
-  const a = `${hidden * step + num}`;
+  const question = getProgression(first, step, 10, hidden);
+  const answer = String(hidden * step + first);
 
-  return cons(q, a);
+  return cons(question, answer);
 };
 
-const startProgression = () => playGame(qna, welcomeText);
+const startProgression = () => playGame(generateQna, welcomeText);
 
 export default startProgression;

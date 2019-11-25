@@ -1,14 +1,18 @@
 import { cons } from '@hexlet/pairs';
-import { playGame, randomNumber } from '../index';
+import randomNumber from '../utils';
+import playGame from '..';
 
 const welcomeText = 'What is the result of the expression?';
 
-const symbols = '*-+';
+const operations = '*-+';
 
-const randomSymbol = (str) => str[randomNumber(str.length)];
+const randomOperation = (operationsList) => {
+  const randomSymbol = randomNumber(0, operationsList.length - 1);
+  return operationsList[randomSymbol];
+};
 
-const calculate = (num1, num2, proc) => {
-  switch (proc) {
+const calculate = (num1, num2, operation) => {
+  switch (operation) {
     case '*':
       return num1 * num2;
     case '-':
@@ -18,17 +22,17 @@ const calculate = (num1, num2, proc) => {
   }
 };
 
-const qna = () => {
-  const num1 = randomNumber(50);
-  const num2 = randomNumber(50);
-  const proc = randomSymbol(symbols);
+const generateQna = () => {
+  const num1 = randomNumber(0, 50);
+  const num2 = randomNumber(0, 50);
+  const operation = randomOperation(operations);
 
-  const q = `${num1} ${proc} ${num2}`;
-  const a = `${calculate(num1, num2, proc)}`;
+  const question = `${num1} ${operation} ${num2}`;
+  const answer = String(calculate(num1, num2, operation));
 
-  return cons(q, a);
+  return cons(question, answer);
 };
 
-const startCalc = () => playGame(qna, welcomeText);
+const startCalc = () => playGame(generateQna, welcomeText);
 
 export default startCalc;

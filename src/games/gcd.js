@@ -1,26 +1,31 @@
 import { cons } from '@hexlet/pairs';
-import { playGame, randomNumber } from '../index';
+import randomNumber from '../utils';
+import playGame from '..';
 
 const welcomeText = 'Find the greatest common divisor of given numbers.';
 
-const gcd = (num1, num2) => {
-  const d = num1 % num2;
+const findGcd = (num1, num2) => {
+  const big = num1 > num2 ? num1 : num2;
+  const small = big === num1 ? num2 : num1;
 
-  return d === 0 ? num2 : gcd(num2, d);
+  const findDivisor = (bigNum, smallNum) => {
+    const divisor = bigNum % smallNum;
+    return divisor === 0 ? smallNum : findDivisor(smallNum, divisor);
+  };
+
+  return findDivisor(big, small);
 };
 
-const qna = () => {
-  const num1 = randomNumber(100);
-  const num2 = randomNumber(100);
-  const bigger = num1 > num2 ? num1 : num2;
-  const smaller = bigger === num1 ? num2 : num1;
+const generateQna = () => {
+  const num1 = randomNumber(1, 100);
+  const num2 = randomNumber(1, 100);
 
-  const q = `${num1} ${num2}`;
-  const a = `${gcd(bigger, smaller)}`;
+  const question = `${num1} ${num2}`;
+  const answer = String(findGcd(num1, num2));
 
-  return cons(q, a);
+  return cons(question, answer);
 };
 
-const startGcd = () => playGame(qna, welcomeText);
+const startGcd = () => playGame(generateQna, welcomeText);
 
 export default startGcd;

@@ -1,16 +1,17 @@
 import { cons } from '@hexlet/pairs';
-import { playGame, randomNumber } from '../index';
+import randomNumber from '../utils';
+import playGame from '..';
 
 const welcomeText = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (num) => num % 2 === 0;
 
-const qna = () => {
-  const q = randomNumber(100);
-  const a = isEven(q) ? 'yes' : 'no';
-  return cons(q, a);
+const generateQna = () => {
+  const question = randomNumber(1, 100);
+  const answer = isEven(question) ? 'yes' : 'no';
+  return cons(question, answer);
 };
 
-const startEven = () => playGame(qna, welcomeText);
+const startEven = () => playGame(generateQna, welcomeText);
 
 export default startEven;

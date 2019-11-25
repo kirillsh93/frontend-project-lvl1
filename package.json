@@ -1,6 +1,6 @@
 {
   "name": "fplvl1-ks",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Pack of games, containing 5 console games: isEven, Calculator, Greater Common Divisor, Progression and isPrime",
   "main": "index.js",
   "bin": {
