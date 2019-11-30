@@ -1,5 +1,11 @@
 # Project #1 | Brain Games
-In this project I implemented a set of mini-games called "Brain Games". All games can be launched from the console.
+In this project I implemented a set of mini-games called "Brain Games". All games can be launched from the console. The package contains 5 games in which player has to solve unique mathematical problem.
+
+1. Is Even
+2. Calculator
+3. Greater Comoon Divisor
+4. Is Prime
+5. Progression
 
 ## frontend-project-lvl1
 
