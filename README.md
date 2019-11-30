@@ -28,7 +28,13 @@ After installation all games are available globally. Just run preferred game com
 brain-progression
 ```
 
-## Even numbers:
+## Is Even
+
+In this game player has to find out if presented number is even.
+
+```bash
+brain-even
+```
 
 [![asciicast](https://asciinema.org/a/h9hNb8Oza2aZLF0fE97CbsYbL.svg)](https://asciinema.org/a/h9hNb8Oza2aZLF0fE97CbsYbL)
 
