@@ -3,7 +3,7 @@ In this project I implemented a set of mini-games called "Brain Games". The pack
 
 1. Is Even
 2. Calculator
-3. Greater Common Divisor
+3. Greatest Common Divisor
 4. Is Prime
 5. Progression
 
@@ -40,7 +40,7 @@ brain-even
 
 ## Calculator
 
-In this game player has to calculate the answer.
+In this game player has to calculate the result of the expression.
 
 ```bash
 brain-calc
@@ -48,7 +48,13 @@ brain-calc
 
 [![asciicast](https://asciinema.org/a/VyIzoalSwJIxSsL5Tzn3L9K23.svg)](https://asciinema.org/a/VyIzoalSwJIxSsL5Tzn3L9K23)
 
-## Greater common divisor:
+## Greatest Common Divisor
+
+In this game player has to find the GCD for two presented numbers.
+
+```bash
+brain-gcd
+```
 
 [![asciicast](https://asciinema.org/a/CTcgJKbTiTl4DW8ovkfVDpToB.svg)](https://asciinema.org/a/CTcgJKbTiTl4DW8ovkfVDpToB)
 
