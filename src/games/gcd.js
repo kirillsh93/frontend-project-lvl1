@@ -4,7 +4,7 @@ import playGame from '..';
 
 const welcomeText = 'Find the greatest common divisor of given numbers.';
 
-const findGcd = (num1, num2) => {
+const findGreatestDivisor = (num1, num2) => {
   const big = num1 > num2 ? num1 : num2;
   const small = big === num1 ? num2 : num1;
 
@@ -16,16 +16,16 @@ const findGcd = (num1, num2) => {
   return findDivisor(big, small);
 };
 
-const generateQna = () => {
+const generateQuestionAnswer = () => {
   const num1 = randomNumber(1, 100);
   const num2 = randomNumber(1, 100);
 
   const question = `${num1} ${num2}`;
-  const answer = String(findGcd(num1, num2));
+  const answer = String(findGreatestDivisor(num1, num2));
 
   return cons(question, answer);
 };
 
-const startGcd = () => playGame(generateQna, welcomeText);
+const startGcd = () => playGame(generateQuestionAnswer, welcomeText);
 
 export default startGcd;

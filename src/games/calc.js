@@ -7,8 +7,8 @@ const welcomeText = 'What is the result of the expression?';
 const operations = '*-+';
 
 const randomOperation = (operationsList) => {
-  const randomSymbol = randomNumber(0, operationsList.length - 1);
-  return operationsList[randomSymbol];
+  const randomIndex = randomNumber(0, operationsList.length - 1);
+  return operationsList[randomIndex];
 };
 
 const calculate = (num1, num2, operation) => {
@@ -17,12 +17,14 @@ const calculate = (num1, num2, operation) => {
       return num1 * num2;
     case '-':
       return num1 - num2;
-    default:
+    case '+':
       return num1 + num2;
+    default:
+      return null;
   }
 };
 
-const generateQna = () => {
+const generateQuestionAnswer = () => {
   const num1 = randomNumber(0, 50);
   const num2 = randomNumber(0, 50);
   const operation = randomOperation(operations);
@@ -33,6 +35,6 @@ const generateQna = () => {
   return cons(question, answer);
 };
 
-const startCalc = () => playGame(generateQna, welcomeText);
+const startCalc = () => playGame(generateQuestionAnswer, welcomeText);
 
 export default startCalc;

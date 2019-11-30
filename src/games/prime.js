@@ -18,12 +18,12 @@ const isPrime = (num) => {
   return true;
 };
 
-const generateQna = () => {
+const generateQuestionAnswer = () => {
   const question = randomNumber(0, 100);
   const answer = isPrime(question) ? 'yes' : 'no';
   return cons(question, answer);
 };
 
-const startPrime = () => playGame(generateQna, welcomeText);
+const startPrime = () => playGame(generateQuestionAnswer, welcomeText);
 
 export default startPrime;
