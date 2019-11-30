@@ -1,11 +1,18 @@
 # Project #1 | Brain Games
 In this project I implemented a set of mini-games called "Brain Games". All games can be launched from the console.
-## 
 
 ## frontend-project-lvl1
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/6f478d4d34603c769317/maintainability)](https://codeclimate.com/github/kirillsh93/frontend-project-lvl1/maintainability)
 [![Build Status](https://travis-ci.com/kirillsh93/frontend-project-lvl1.svg?branch=master)](https://travis-ci.com/kirillsh93/frontend-project-lvl1)
+
+## Installation
+
+Clone this repository to you computer and use [npm](https://www.npmjs.com) package manager to install it locally. You should run installation command from the local repository folder.
+
+```bash
+npm link
+```
 
 ## Even numbers:
 
