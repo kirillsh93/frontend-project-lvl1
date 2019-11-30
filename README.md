@@ -14,6 +14,14 @@ Clone this repository to you computer and use [npm](https://www.npmjs.com) packa
 npm link
 ```
 
+## How to Launch Games
+
+After installation all games are available globally. Just run preferred game command and the game will begin.
+
+```bash
+brain-progression
+```
+
 ## Even numbers:
 
 [![asciicast](https://asciinema.org/a/h9hNb8Oza2aZLF0fE97CbsYbL.svg)](https://asciinema.org/a/h9hNb8Oza2aZLF0fE97CbsYbL)
