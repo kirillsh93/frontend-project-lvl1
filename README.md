@@ -38,7 +38,13 @@ brain-even
 
 [![asciicast](https://asciinema.org/a/h9hNb8Oza2aZLF0fE97CbsYbL.svg)](https://asciinema.org/a/h9hNb8Oza2aZLF0fE97CbsYbL)
 
-## Calculator:
+## Calculator
+
+In this game player has to calculate the answer.
+
+```bash
+brain-calc
+```
 
 [![asciicast](https://asciinema.org/a/VyIzoalSwJIxSsL5Tzn3L9K23.svg)](https://asciinema.org/a/VyIzoalSwJIxSsL5Tzn3L9K23)
 
