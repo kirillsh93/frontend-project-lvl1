@@ -58,10 +58,22 @@ brain-gcd
 
 [![asciicast](https://asciinema.org/a/CTcgJKbTiTl4DW8ovkfVDpToB.svg)](https://asciinema.org/a/CTcgJKbTiTl4DW8ovkfVDpToB)
 
-## Progression:
+## Is Prime
 
-[![asciicast](https://asciinema.org/a/Pammlh32eIsl3d7l9F9Ui1vo6.svg)](https://asciinema.org/a/Pammlh32eIsl3d7l9F9Ui1vo6)
+In this game player has to find out if presented number is prime.
 
-## Prime number:
+```bash
+brain-prime
+```
 
 [![asciicast](https://asciinema.org/a/ihEM2JjvlSew74S5s5is48HOQ.svg)](https://asciinema.org/a/ihEM2JjvlSew74S5s5is48HOQ)
+
+## Progression
+
+In this game player has to determine missing number in the progression.
+
+```bash
+brain-progression
+```
+
+[![asciicast](https://asciinema.org/a/Pammlh32eIsl3d7l9F9Ui1vo6.svg)](https://asciinema.org/a/Pammlh32eIsl3d7l9F9Ui1vo6)
