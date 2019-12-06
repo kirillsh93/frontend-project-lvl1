@@ -4,17 +4,7 @@ import playGame from '..';
 
 const welcomeText = 'Find the greatest common divisor of given numbers.';
 
-const findGreatestDivisor = (num1, num2) => {
-  const big = num1 > num2 ? num1 : num2;
-  const small = big === num1 ? num2 : num1;
-
-  const findDivisor = (bigNum, smallNum) => {
-    const divisor = bigNum % smallNum;
-    return divisor === 0 ? smallNum : findDivisor(smallNum, divisor);
-  };
-
-  return findDivisor(big, small);
-};
+const findGreatestDivisor = (a, b) => (b === 0 ? a : findGreatestDivisor(b, a % b));
 
 const generateQuestionAnswer = () => {
   const num1 = randomNumber(1, 100);

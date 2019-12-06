@@ -6,15 +6,15 @@ const welcomeText = 'What number is missing in the progression?';
 
 const progressionSize = 10;
 
-const generateQuestion = (first, step, size, hiddenIndex) => {
+const generateQuestion = (first, step, size, hiddenElementIndex) => {
   let result;
 
   for (let i = 0; i < size; i += 1) {
-    const next = i * step + first;
-    if (hiddenIndex === i) {
+    const num = i * step + first;
+    if (hiddenElementIndex === i) {
       result = i === 0 ? '..' : `${result} ..`;
     } else {
-      result = i === 0 ? `${next}` : `${result} ${next}`;
+      result = i === 0 ? `${num}` : `${result} ${num}`;
     }
   }
 
@@ -24,10 +24,10 @@ const generateQuestion = (first, step, size, hiddenIndex) => {
 const generateQuestionAnswer = () => {
   const first = randomNumber(0, 100);
   const step = randomNumber(1, 30);
-  const hiddenIndex = randomNumber(0, progressionSize - 1);
+  const hiddenElementIndex = randomNumber(0, progressionSize - 1);
 
-  const question = generateQuestion(first, step, progressionSize, hiddenIndex);
-  const answer = String(hiddenIndex * step + first);
+  const question = generateQuestion(first, step, progressionSize, hiddenElementIndex);
+  const answer = String(hiddenElementIndex * step + first);
 
   return cons(question, answer);
 };
